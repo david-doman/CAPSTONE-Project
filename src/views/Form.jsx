@@ -32,8 +32,8 @@ export default function Form() {
 
     if (anime.rating === "" || isNaN(anime.rating))
       err.rating = "Valid rating required";
-    else if (anime.rating < 0 || anime.rating > 5)
-      err.rating = "0–5 only";
+    else if (anime.rating < 0 || anime.rating > 10)
+      err.rating = "0–10 only";
 
     if (anime.episodes === "" || isNaN(anime.episodes))
       err.episodes = "Valid episodes required";
@@ -86,7 +86,7 @@ export default function Form() {
       <input
         type="number"
         className="form-control mb-2"
-        placeholder="Rating (0–5)"
+        placeholder="Rating (0–10)"
         value={anime.rating}
         onChange={e => setAnime({ ...anime, rating: e.target.value })}
       />
